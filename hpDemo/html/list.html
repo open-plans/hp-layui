@@ -1,0 +1,165 @@
+<div class="hp-open-list">
+<div class="demoTable">
+	搜索ID：
+	<div class="layui-inline">
+		<input class="layui-input" name="id" id="demoReload2" autocomplete="off">
+	</div>
+	<button class="layui-btn" data-type="reload">搜索</button>
+</div>
+
+<table class="layui-hide" id="kd-table" lay-filter="user"></table>
+
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="radioTpl">
+  <input type="radio" name="sex" title=" " >
+</script>
+</div>
+
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+	layui.use(['table','form'], function() {
+		var table = layui.table;
+		var form=layui.form;
+		//方法级渲染
+		
+		table.render({
+			elem: '#kd-table',
+			index:110,
+			url: 'json/demo3.json',
+			singleSelect:true,// 扩展属性-单选
+			cols: [
+				[
+					//{ templet: '#radioTpl', fixed: true,width: 80, align:'center'}, 
+					{ checkbox:true, fixed: true,width: 80, align:'center'},
+					{ field: 'id', title: 'ID', width: 80, sort: true, fixed: true },
+					{ field: 'username', title: '用户名', width: 80 }, 
+					{ field: 'sex', title: '性别', width: 80, sort: true }, 
+					{ field: 'city', title: '城市', width: 80 }, 
+					{ field: 'sign', title: '签名' }, 
+					{ field: 'experience', title: '积分', sort: true, width: 80 },
+					{ field: 'score', title: '评分', sort: true, width: 80 }, 
+					{ field: 'classify', title: '职业', width: 80 }, 
+					{ field: 'wealth', title: '财富', sort: true, width: 135 },
+					{ fixed: 'right',  width: 180,toolbar: '#barDemo',title: '操作', align:'center' }
+				]
+			],
+			page: true,
+			height: 300,
+			width:800, 
+		});
+
+		var $ = layui.$,
+			active = {
+				reload: function() {
+					var demoReload = $('#demoReload2');
+					console.log(demoReload.val())
+					//执行重载
+					table.reload('kd-table', {
+						page: {
+							curr: 1 //重新从第 1 页开始
+						},
+						where: {
+							key: {
+								id: demoReload.val()
+							}
+						}
+					});
+				},
+			
+			}
+
+		$('.demoTable .layui-btn').on('click', function() {
+			var type = $(this).data('type');
+			active[type] ? active[type].call(this) : '';
+		});
+		
+		//监听工具条
+  table.on('tool(user)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+      layer.msg('ID：'+ data.id + ' 的查看操作');
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+    }
+  });
+  // 
+//监听复选框选择
+/*  $(document).on("click",'.layui-form-checkbox',function(){
+   //console.log(1);
+   //$(this).parents('tr').siblings().find('.layui-form-checkbox').removeClass("layui-form-checked","")
+   // 
+   var childs=$('input[name="layTableCheckbox"]');
+         childs.each(function(i, item){
+          item.checked =true;
+        });
+  });
+  */
+  
+  //
+/*  table.on('checkbox(user)', function(obj){
+  	var _this=this;
+  	var idx=$(_this).parents('tr').data('index')
+			 var childs=$('input[name="layTableCheckbox"]');
+			 console.log(that)
+			  console.log(obj)
+			 	 console.log(table)
+			 	 var thisData = table.cache['kd-table'];
+			 	  console.log(thisData)
+			 	  console.log($(_this).parents('tr').data('index'))
+   /*      childs.each(function(i, item){
+         	debugger
+         	if(idx!=i){
+         		item.checked =false;
+         		//that.setCheckData(i, false);
+         		//console.log($('.layui-table-view'))
+         		//$('.layui-table-view')[0].setCheckData(i, false);
+         		//$(item).siblings('.layui-form-checkbox').removeClass('layui-form-checked')
+         	}
+          
+        });*/
+/*       $.each(thisData, function(i, item) {
+       	if(idx!=i){
+       	item['LAY_CHECKED'] =false;
+       	} 
+       });
+       	 console.log(thisData)
+         form.render("checkbox");
+			
+			
+});
+*/
+
+/*table.on('checkbox(user)', function(obj){
+  if (obj.type == "all") {
+          var csss = $(".layui-table-cell.laytable-cell-1-0.laytable-cell-checkbox");
+          csss.each(function(index, e){
+            e.children[0].checked = false; 
+            e.children[1].className="layui-unselect layui-form-checkbox";  
+          }); 
+  } else {
+    var csss = $(".layui-table-cell.laytable-cell-1-0.laytable-cell-checkbox");
+          csss.each(function(index, e){
+            var dataIndex = e.parentNode.parentNode.getAttribute("data-index");
+            if (dataIndex != null) {
+              if(dataIndex != obj.data.LAY_TABLE_INDEX){
+              e.children[0].checked = false; 
+                e.children[1].className="layui-unselect layui-form-checkbox";  
+              }
+            } else {
+              e.children[0].checked = false; 
+              e.children[1].className="layui-unselect layui-form-checkbox";  
+            }
+          }); 
+  }
+});*/
+	});
+</script>

@@ -1,0 +1,162 @@
+.layui-tab-title {
+	background-color: #f2f2f2;
+}
+
+.layui-tab-title .layui-this {
+	background-color: #fff;
+}
+
+.demo-carousel {
+	height: 500px;
+	padding-top: 250px;
+	text-align: center;
+}
+
+.hp-iframe {
+	border-color: rgba(0, 0, 0, 0);
+}
+
+.hp-right-tab-menu table tr td {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 6px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.hp-right-tab-menu table tr td:hover {
+	color: black;
+	background: white;
+}
+.layui-circle-img{
+	width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    border-radius: 50%; 
+/*    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%; */
+}
+
+
+.hp-nav-none .layui-nav-bar{
+    background-color: rgba(0,0,0,0);
+}
+
+/*主题*/
+/* 炫酷蓝  配色*/
+/* 头部*/
+.hp-blue-theme .layui-header{
+	background: #1E9FFF;
+}
+.hp-blue-theme .layui-header .layui-logo{
+	color: white;
+}
+.hp-blue-theme .layui-header .layui-nav .layui-nav-item .layui-nav-child{
+	background: #1E9FFF;
+}
+.hp-blue-theme .layui-header .layui-nav .layui-nav-child a:hover{
+	    background-color: #4E5465;
+}
+.hp-blue-theme .layui-header .layui-nav .layui-nav-item a{
+	color: white;
+}
+.hp-blue-theme .layui-header  .layui-nav-bar{
+	background-color:white;
+}
+/* 左侧菜单*/
+.hp-blue-theme .hp-left-menu{
+	background-color: #1E9FFF;
+}
+
+.hp-blue-theme .hp-left-menu .layui-nav {
+	background-color: #1E9FFF;
+}
+
+.hp-blue-theme .hp-left-menu .layui-nav-tree .layui-nav-bar {
+	background-color: white;
+}
+.hp-blue-theme .hp-left-menu  .layui-nav-tree .layui-nav-item a {
+	color: #fff; 
+}
+
+.hp-blue-theme .hp-left-menu .layui-nav-tree  .layui-this>a {
+	background-color: #01aaed;
+}
+.hp-blue-theme .hp-left-menu .layui-nav-tree .layui-nav-child .hp-tab-add:hover{
+	/*background-color: #01aaed;*/
+	color: rgba(255,255,255,.7);
+}
+.hp-blue-theme .hp-left-menu .layui-nav-tree  .layui-this>a:hover {
+	background-color: #01aaed;
+}
+.hp-blue-theme .hp-left-menu .layui-nav-child dd.layui-this {
+	background-color: #01aaed;
+}
+.hp-blue-theme .hp-nav-none  .layui-nav-item  .hp-user-name{
+	color: #fff;
+}
+
+/*主题*/
+/* 原谅绿 配色*/
+/* 头部*/
+.hp-green-theme  .layui-header{
+	background: #5FB878;
+}
+.hp-green-theme  .layui-header .layui-logo{
+	color: white;
+}
+.hp-green-theme  .layui-header .layui-nav .layui-nav-item .layui-nav-child{
+	background: #5FB878;
+}
+.hp-green-theme  .layui-header .layui-nav .layui-nav-child a:hover{
+	    background-color: #4E5465;
+}
+.hp-green-theme  .layui-header .layui-nav .layui-nav-item a{
+	color: white;
+}
+.hp-green-theme  .layui-header  .layui-nav-bar{
+	background-color:white;
+}
+/* 左侧菜单*/
+.hp-green-theme  .hp-left-menu{
+	background-color: #5FB878;
+}
+
+.hp-green-theme  .hp-left-menu .layui-nav {
+	background-color: #5FB878;
+}
+
+.hp-green-theme  .hp-left-menu .layui-nav-tree .layui-nav-bar {
+	background-color: white;
+}
+.hp-green-theme  .hp-left-menu  .layui-nav-tree .layui-nav-item a {
+	color: #fff; 
+}
+	/* 选中颜色*/
+.hp-green-theme  .hp-left-menu .layui-nav-tree  .layui-this>a {
+	background-color: #3eb377;
+}
+.hp-green-theme  .hp-left-menu .layui-nav-tree .layui-nav-child .hp-tab-add:hover{
+	/*background-color: #01aaed;*/
+	color: rgba(255,255,255,.7);
+}
+.hp-green-theme  .hp-left-menu .layui-nav-tree  .layui-this>a:hover {
+	background-color: #3eb377;
+}
+.hp-green-theme  .hp-left-menu .layui-nav-child dd.layui-this {
+	background-color: #3eb377;
+}
+.hp-green-theme  .hp-nav-none  .layui-nav-item  .hp-user-name{
+	color: #fff;
+}
+
+
+/*主题*/
+/*低调黑  配色*/
+/* 头部*/
+.hp-black-theme .layui-side-scroll{
+	background: #393D49;
+}
+

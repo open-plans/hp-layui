@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>test1</title>
+	<link rel="stylesheet" type="text/css" href="../../lib/layui/css/layui.css">
+  <style type="text/css">
+  .layui-table img{
+    max-height: 100%;
+  }
+  </style>
+</head>
+<body>
+<div class="layui-container">
+  <table id="demo" lay-filter="testtable"></table>
+</div>
+
+
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="ceshi">测试</a>
+</script>
+<textarea class="layui-textarea" id="LAY_demo1" style="display: none" placeholder="123456">  
+</textarea>
+<script type="text/html" id="titleTpl">
+  <a href="javascript:;" title="/detail/{{d.id}}" class="layui-table-link">{{d.LAY_TABLE_INDEX}}</a>
+</script>
+<script type="text/html" id="sexTpl">
+  <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-filter="sexdemo" lay-text="男|女" {{d.sex=="男"?"checked":""}}>
+</script>
+<script type="text/html" id="radioTpl">
+  <input type="radio" name="sexRadio" value="{{d.id}}" title=" " lay-filter="radiodemo" {{d.id=="10002"?"checked":""}}>
+</script>
+<script type="text/html" id="checkTpl">
+  <input type="checkbox" name="sexCheck" value="{{d.id}}" title="锁定" lay-filter="checkdemo" {{d.id=="10002"?"checked":""}}>
+</script>
+
+<script type="text/javascript" src="../../lib/layui/layui.js"></script>
+<!-- <script type="text/javascript" src="/layui/src/layui.js"></script> -->
+<script type="text/javascript">
+var tt=40;
+layui.use(["table","laytpl","form","laydate"],function() {
+	var table=layui.table,laytpl=layui.laytpl,form=layui.form,$=layui.jquery,laydate=layui.laydate;
+
+  //展示已知数据
+  table.render({
+    elem: '#demo'
+    ,id:"democc"
+    ,data: [{
+      "id": "10001"
+      ,"username": "杜甫"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "116"
+      ,"ip": "192.168.0.8"
+      ,"logins": "108"
+      ,"joinTime": "1507353913000"
+      ,"pic":"20100129084340872.jpg"
+    }, {
+      "id": "10002"
+      ,"username": "李白"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "12"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+      ,"pic":"20100129084340872.jpg"
+    }, {
+      "id": "10008"
+      ,"username": "贤心"
+      ,"email": "xianxin@layui.com"
+      ,"sex": "男"
+      ,"city": "浙江杭州"
+      ,"sign": "人生恰似一场修行"
+      ,"experience": "106"
+      ,"ip": "192.168.0.8"
+      ,"logins": "106"
+      ,"joinTime": "2016-10-14"
+      ,"pic":"20100129084340872.jpg"
+    }]
+    //,width:"90%"
+    ,height:"full-200"
+    ,cellMinWidth:100
+    ,cols: [[ //标题栏
+      {type:"numbers",fixed:"left"}
+      ,{type:"checkbox",fixed:"left"} //默认全选加,LAY_CHECKED:true
+      ,{field: 'id', title: 'ID',  sort: true,unresize:true}
+      ,{field: 'username', title: '用户名',unresize:true}
+      ,{field: 'email', title: '邮箱'}
+      ,{field: 'sign', title: '签名',event:"sign"}
+      ,{field: 'sex', title: '性别',templet:"#sexTpl",unresize:true}
+      ,{field: 'sex', title: 'check',templet:"#checkTpl",unresize:true}
+      ,{field: 'sex', title: 'radio',templet:"#radioTpl",unresize:true}
+      ,{field: 'city', title: '城市'}
+      ,{space:true,type:"space",title:"空白列"}
+      ,{field: 'joinTime', title: '添加时间'}
+      ,{field: 'experience', title: '积分', sort: true,event:"jifen"}
+      ,{fixed: 'right', title: '操作',width:120, align:'center', toolbar: '#barDemo'}
+    ]] 
+    ,skin: 'row' //表格风格
+    ,even: true
+    ,page: true //是否显示分页
+    ,limits: [2, 5, 10]
+    ,limit: 2 //每页默认显示的数量
+    ,done:function(res, curr, count) {
+      //console.log(res);
+      var totaljifen=0;
+      $.each(res.data,function(i,item) {
+        //console.log(item);
+        totaljifen+=parseInt(item.experience);
+      });
+      console.log(totaljifen);
+    }
+  });
+  //监听工具条
+  table.on('tool(testtable)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+    var data = obj.data; //获得当前行数据
+    var layEvent = obj.event; //获得 lay-event 对应的值
+    var tr = obj.tr; //获得当前行 tr 的DOM对象
+    //console.log(layEvent);
+    //console.log(data);
+    //return;
+    if(layEvent === 'detail'){ //查看
+      //do somehing
+    } else if(layEvent === 'del'){ //删除
+      layer.confirm('真的删除行么', function(index){
+        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+        layer.close(index);
+        //向服务端发送删除指令
+      });
+    } else if(layEvent === 'edit'){ //编辑
+      //do something
+      
+      //同步更新缓存对应的值
+      obj.update({
+        username: '123'
+        ,title: 'xxx'
+      });
+    } else if (layEvent === 'sign') {
+      layer.prompt({
+        formType:2
+        ,title:"修改ID为"+data.id+",username为“"+data.username+"”的签名"
+        ,value:data.sign
+      },function(value,index) {
+        layer.close(index);
+        obj.update({
+          sign:value
+        });
+      });
+    }
+  }); 
+  table.on('radio(testtable)', function(obj){
+    //console.log(obj.checked); //当前是否选中状态
+    console.log(obj.data); //选中行的相关数据
+  });
+  form.on("switch(sexdemo)",function(obj) {
+    layer.tips(this.value+" "+this.name+":"+obj.elem.checked,obj.othis);
+  });
+  form.on("radio(radiodemo)",function(obj) {
+    layer.tips(this.value+" "+this.name+":"+obj.elem.checked,obj.othis);
+  });
+  form.on("checkbox(checkdemo)",function(obj) {
+    layer.tips(this.value+" "+this.name+":"+obj.elem.checked,obj.othis,{tips:[1,"#009688"]});
+  });    
+});
+</script>
+</body>
+</html>
