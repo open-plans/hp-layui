@@ -67,7 +67,13 @@
 				<div class="layui-tab-item">
 
 					<blockquote class="layui-elem-quote layui-text">
-						hpTab 是建立 在 layui 的 自定义 模块上的,所以使用起来和layui依赖自身的模块是一样的
+						hpWindow.openList(elm, url, dataObj,callBack, opt)<br/>
+						注意:<br/>
+						elm:绑定的元素<br/>
+						url:接口地址<br/>
+						dataObj:数据参数<br/>
+						callBack:回调函数<br/>
+						opt:layer.open 参数<br/>
 					</blockquote>
 
 				</div>
@@ -80,7 +86,7 @@
 		<script>
 			// 配置
 			layui.config({
-				base: '../js/' // 扩展模块目录
+				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名 
 				hpWindow: 'hpWindow/hpWindow'
 			});

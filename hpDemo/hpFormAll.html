@@ -54,7 +54,11 @@
     <div class="layui-tab-item">
     	
     	<blockquote class="layui-elem-quote layui-text">
-			hpTab 是建立 在 layui 的 自定义 模块上的,所以使用起来和layui依赖自身的模块是一样的
+			hpFormAll.open(elm,url,title)<br/>
+			注意：<br/>
+			elm 为绑定的元素 如 #addBtn<br/>
+			url 为访问的接口地址 如 xxx<br/>
+			title为绑定的元素 如显示的弹窗的标题<br/>
 		</blockquote>
     	
     </div>
@@ -67,7 +71,7 @@
 		<script>
 			// 配置
 			layui.config({
-				base: '../js/' // 扩展模块目录
+				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名
 				hpTab: 'hpTab/hpTab',
 				hpRightMenu: 'hpRightMenu/hpRightMenu',

@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="favicon.ico" />
 	</head>
 
-	<body class="layui-layout-body hp-blue-theme">
+	<body class="layui-layout-body hp-white-theme">
 		<div class="layui-layout layui-layout-admin">
 			<div class="layui-header">
 				<div class="layui-logo">
@@ -113,7 +113,7 @@
 									<a class="hp-tab-add" hp-href="hpDemo/hpTab.html" href="javascript:;" >动态选项卡</a>
 								</dd>
 								<dd>
-									<a href="javascript:;">右键菜单项</a>
+									<a class="hp-tab-add" hp-href="hpDemo/hpRightMenu.html" href="javascript:;">右键菜单项</a>
 								</dd>
 								<dd>
 									<a class="hp-tab-add" hp-href="hpDemo/hpLayedit.html"  href="javascript:;">多图编辑器</a>
@@ -131,7 +131,24 @@
 							<a href="javascript:;">示例页面</a>
 							<dl class="layui-nav-child">
 								<dd>
-									<a class="hp-tab-add" hp-href="pageDemo/login/login1.html" href="javascript:;" >登录页面</a>
+									<a  target="_blank"   href="pageDemo/login/login1.html" >登录页面</a>
+								</dd>
+								<dd>
+									<a  target="_blank"   href="pageDemo/404.html" >404页面</a>
+								</dd>
+							</dl>
+						</li>
+				       <li class="layui-nav-item">
+							<a href="javascript:;">数据列表</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="hp-tab-add" hp-href="pageDemo/list/dataList.html" href="javascript:;" >基础列表</a>
+								</dd>
+								<dd>
+									<a class="hp-tab-add" hp-href="pageDemo/list/imgList.html" href="javascript:;" >图文列表</a>
+								</dd>
+								<dd>
+									<a class="hp-tab-add" hp-href="pageDemo/list/formList.html" href="javascript:;" >表单列表</a>
 								</dd>
 							</dl>
 						</li>
@@ -139,10 +156,10 @@
 						
 						
 						<li class="layui-nav-item">
-							<a href="">github组织</a>
+							<a  target="_blank"   href="https://github.com/hpit-BAT">github组织</a>
 						</li>
 						<li class="layui-nav-item">
-							<a href="">黑科技</a>
+							<a  target="_blank"   href="https://hpit-bat.github.io/hpit-BAT-home">黑科技</a>
 						</li>
 					</ul>
 				</div>
@@ -192,12 +209,40 @@
 										</div>
 									</div>
 								</div>
-  
+                                <!-- 源码地址 -->
+                                <div style="margin-top: 10px;">
+                                	<blockquote class="layui-elem-quote">
+                                		源码地址：<br/><br/>
+                                		<a href=""><button class="layui-btn layui-btn-danger  layui-btn-sm">github</button></a>
+                                	</blockquote>
+                                	<blockquote class="layui-elem-quote">
+                                		<h2>hp-layui 厚溥与你同在   @隐无为</h2>
+                                		如果你有什么需求和疑问欢迎加入qq群讨论交流前端知识<br/>
+                                		<b>qq群:693291343</b>
+                                	</blockquote>
+                                </div>
+                                <!--时间线 -->
 								<div>
 									<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-										<legend>hp-layui</legend>
+										<legend>hp-layui 今生前世</legend>
 									</fieldset>
 									<ul class="layui-timeline">
+										<li class="layui-timeline-item">
+											 <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
+											<div class="layui-timeline-content layui-text">
+												<div class="layui-timeline-title" style="color: red;">
+													更新layui 版本 2.2.5 并添加了如下功能
+												</div>
+											     <ul>
+													<li>
+														示例页面
+													</li>
+													<li>
+														数据列表页面
+													</li>
+												</ul>
+											</div>
+										</li>
 										<li class="layui-timeline-item">
 											<i class="layui-icon layui-timeline-axis"></i>
 											<div class="layui-timeline-content layui-text">
@@ -212,7 +257,7 @@
 												<div class="layui-timeline-title" style="color: red;">2017末尾,想把学习的layui成果分享->hp-layui-1.0 </div>
 												<ul>
 													<li>
-														基本元素
+														基本功能
 													</li>
 													<li>
 														扩展组件(layui 模块写法)
@@ -252,7 +297,7 @@
 		<script>
 			// 配置
 			layui.config({
-				base: './js/' // 扩展模块目录
+				base: './hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名
 				hpTab: 'hpTab/hpTab',
 				hpRightMenu: 'hpRightMenu/hpRightMenu',
@@ -271,13 +316,11 @@
 				 //初始化轮播
 				carousel.render({
 					elem: '#test1',
-					width: '100%' //设置容器宽度
-						,
-					interval: 1000,
-					height: 500,
-					arrow: 'none' //不显示箭头
-						,
-					anim: 'fade' //切换动画方式
+					width: '100%', //设置容器宽度
+					interval: 1500,
+					height: '500px',
+					arrow: 'none', //不显示箭头
+					anim: 'fade', //切换动画方式
 				});
 			
 				// 初始化 动态tab

@@ -45,9 +45,10 @@
 				</div>
 				<div class="layui-tab-item">
 					<blockquote class="layui-elem-quote layui-text">
-						hpTab 是建立 在 layui 的 自定义 模块上的,所以使用起来和layui依赖自身的模块是一样的
+					在原生的edit上 增加 multiple: true 属性 代表是否开启多图
 					</blockquote>
-
+                   
+                   
 				</div>
 			</div>
 		</div>
@@ -58,7 +59,7 @@
 		<script>
 			// 配置
 			layui.config({
-				base: '../js/' // 扩展模块目录
+				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名 
 				hpWindow: 'hpWindow/hpWindow'
 			});

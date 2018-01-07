@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	background: url(../../../img/login/login1/bg11.jpg) no-repeat center top;
+	background: url(../../../img/login/login1/bg.jpg) no-repeat center top;
 	background-size: 100% 100%
 }
 
@@ -20,7 +20,7 @@ body {
 .qiqiu div {
 	width: 70px;
 	height: 65px;
-	background: url(../../../img/login/login1/730e0cf3d7ca7bcbbc1b79c0bf096b63f724a8f9.png) no-repeat center center;
+	background: url(../../../img/login/login1/q1.png) no-repeat center center;
 	padding: 15px 5px 0;
 	text-align: center;
 	margin: 0 auto;

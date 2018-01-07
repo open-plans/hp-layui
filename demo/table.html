@@ -15,12 +15,10 @@ body{padding: 20px;}
 <body>
 
 <div class="layui-btn-group demoTable">
-  <button class="layui-btn" data-type="getCheckData">获取选中行数据</button>
-  <button class="layui-btn" data-type="getCheckLength">获取选中数目</button>
-  <button class="layui-btn" data-type="isAll">验证是否全选</button>
+  <button id="refrsh-1" class="layui-btn" data-type="reload">刷新表格</button>
 </div>
  
-<table class="layui-table" lay-data="{width: 892, height:332, url:'json/table/demo3.json', page:true, id:'idTest'}" lay-filter="demo">
+<table class="layui-table" lay-data="{width: 892, height:332, url:'json/table/demo3.json', page:true, id:'idTest',showLoad:true}" lay-filter="demo">
   <thead>
     <tr>
       <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
@@ -368,7 +366,21 @@ layui.use('table', function(){
    })
    
    
-
+  // 表格刷新
+   $("#refrsh-1").click(function(){
+   	      //执行重载
+      table.reload('idTest', {
+        page: {
+          curr: 1 //重新从第 1 页开始
+        }
+        ,where: {
+          // 参数
+          kd:'kd'
+        }
+      });
+   	
+   })
+   
 
   
   

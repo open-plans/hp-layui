@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+        <div class="hp-open-list">
+		<form class="layui-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">用户名</label>
+				<div class="layui-input-inline"  style="width: 150px;">
+					<input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+				</div>
+			</div>
+			
+		    <div class="layui-form-item">
+				<label class="layui-form-label">城市</label>
+				<div class="layui-input-inline"  style="width: 150px;">
+					<select style="width: 40px;"  name="city" lay-verify="required">
+						<option value="">请选择一个城市</option>
+						<option value="010">北京</option>
+						<option value="021">上海</option>
+						<option value="0571">杭州</option>
+					</select>  
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">职业</label>
+				<div class="layui-input-inline"  style="width: 150px;">
+					<input type="text" name="username" lay-verify="required" placeholder="请输入职业" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+
+
+ 	<button class="layui-btn layui-btn-small bcql-icon icon-save" lay-submit lay-filter="save" style="display: none;"></button>
+
+		</form>
+</div>
+	</body>
+
+</html>

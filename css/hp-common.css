@@ -1,3 +1,24 @@
+/*弹窗*/
 .hp-open-list {
 	padding: 5px 20px;
+}
+/*按钮*/
+.hp-btn-green{
+	background-color:  #5FB878;
+}
+
+/*表单*/
+.hp-form-item{
+	    margin-bottom: 0;
+}
+.layui-form-item  .hp-form-inline{
+	margin-right: initial; /*initial设置成初始值 相当于none*/
+	margin-bottom: initial;
+}
+.hp-form-label{
+	width: initial; /*initial设置成初始值 相当于none*/
+}
+
+.hp-progress{
+	margin-top: 4px;
 }
