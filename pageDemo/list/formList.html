@@ -67,9 +67,9 @@
   <button class="layui-btn layui-btn-danger" ><i class="layui-icon"></i>删除</button>
   <button id="refrsh" class="layui-btn hp-btn-green"><i class="layui-icon">ဂ</i>刷新</button>
 </div>
- 
-<table class="layui-table" lay-data="{cellMinWidth: 80, url:'../json/demo5.json', page:true, id:'demo',showLoad:true}" lay-filter="demo">
-  <thead>
+
+<!-- <table class="layui-table" lay-data="{cellMinWidth: 80, url:'../json/demo5.json', page:true, id:'demo',showLoad:true}" lay-filter="demo">
+ <thead>
     <tr>
       <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
       <th lay-data="{field:'state', templet:stateFmt}">状态</th>
@@ -81,7 +81,14 @@
     </tr>
   </thead>
 </table>  
-	     
+ --> 
+ 
+  <!-- 方法级渲染 -->
+ <table class="layui-table" id="demo" lay-filter="demo">
+ 
+</table>  
+ 
+ 
 <script type="text/html" id="hp_toolbar">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
   <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -131,16 +138,34 @@
   
 	
 	
+	
+	
 layui.use(['table','element'], function(){
 	
   var table = layui.table;
    var element = layui.element;
   var $=layui.$;
- 
-  
-  
-    
-  
+   // 方法级渲染
+  table.render({
+    elem: '#demo',
+    url:'../json/demo5.json',
+    cellMinWidth: 80,
+    showLoad:true,
+     page: true,
+     cols: [[
+      {type: 'checkbox',fixed: 'left'},
+      {field:'state', templet:stateFmt,title:'状态'}, 
+      {field:'name', sort: true,title:'名称'},
+      {field:'createTime',title:'开始时间'},
+      {field:'progress', templet:progressFmt, align:'center',title:'进度'},
+      {field:'users', templet:usersFmt,title:'参与者'},
+      {fixed: 'right', width:178, align:'center', toolbar: '#hp_toolbar',title:'操作'}
+    ]],
+    done:function(){
+    	//console.log(111111111)
+    	element.render('progress'); 
+    }
+  });
   
   
   
