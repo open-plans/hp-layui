@@ -1,5 +1,4 @@
-//hp-tab
-
+//hp-tab 选项卡
 layui.define(['element'], function(exports) {
 	var $ = layui.jquery;
 	var element = layui.element;
@@ -35,17 +34,17 @@ layui.define(['element'], function(exports) {
 				content: '<iframe class="hp-iframe" style="width:100%"  src="' + href + '" />',
 				id: id //实际使用一般是规定好的id，这里以时间戳模拟下
 			})
-			element.tabChange('hp-tab-filter', id); //切换到：用户管理
+			element.tabChange('hp-tab-filter', id); 
 		},
 		tabDelete: function(othis) {
 			//删除指定Tab项
-			element.tabDelete('hp-tab-filter', '44'); //删除：“商品管理”
+			element.tabDelete('hp-tab-filter', '44'); 
 
 			othis.addClass('layui-btn-disabled');
 		},
 		tabChange: function(id) {
 			//切换到指定Tab项
-			element.tabChange('hp-tab-filter', id); //切换到：用户管理
+			element.tabChange('hp-tab-filter', id); 
 		},
 		/**
 		 * 监听浏览器窗口改变事件
@@ -53,7 +52,7 @@ layui.define(['element'], function(exports) {
 		winResize: function() {
 			$(window).on('resize', function() {
 				var currBoxHeight = $('.layui-body').height(); //获取当前容器的高度
-				$('.layui-tab-content iframe').height(currBoxHeight - 116);
+				$('.layui-tab-content iframe').height(currBoxHeight - 86);
 			}).resize();
 		}
 
