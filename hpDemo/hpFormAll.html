@@ -73,9 +73,10 @@
 			layui.config({
 				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名
-				hpTab: 'hpTab/hpTab',
-				hpRightMenu: 'hpRightMenu/hpRightMenu',
-				hpFormAll: 'hpFormAll/hpFormAll'
+				hpTab: 'hpComponent/hpTab',
+				hpRightMenu: 'hpComponent/hpRightMenu',
+				hpFormAll: 'hpComponent/hpFormAll',
+				hpConfig : 'hpComponent/hpConfig',
 			});
 			layui.use(['table', 'hpFormAll'], function() {
 				var table = layui.table;

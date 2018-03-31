@@ -88,7 +88,8 @@
 			layui.config({
 				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名 
-				hpWindow: 'hpWindow/hpWindow'
+				hpWindow: 'hpComponent/hpWindow',
+				hpConfig : 'hpComponent/hpConfig',
 			});
 			layui.use(['table', 'hpWindow'], function() {
 				var table = layui.table;

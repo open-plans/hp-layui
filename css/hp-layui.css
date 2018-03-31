@@ -49,6 +49,13 @@
 }
 
 
+/* 字体图标 大小*/
+.hp-icon-size{
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+
 /*主题*/
 
 
@@ -121,6 +128,10 @@
 	color: #fff;
 }
 
+/*选项卡 颜色*/
+.hp-blue-theme .hp-tab>ul li.layui-this{
+	border-top: 3px solid #1E9FFF;
+}
 
 /*主题*/
 
@@ -197,6 +208,10 @@
 	color: #fff;
 }
 
+/*选项卡 颜色*/
+.hp-green-theme .hp-tab>ul li.layui-this{
+	border-top: 3px solid #5FB878;
+}
 
 /*主题*/
 
@@ -209,6 +224,13 @@
 .hp-black-theme .layui-side-scroll {
 	background: #393D49;
 }
+
+/*选项卡 颜色*/
+.hp-black-theme  .hp-tab>ul li.layui-this{
+	border-top: 3px solid  #000;
+}
+
+
 
 
 /*主题*/
