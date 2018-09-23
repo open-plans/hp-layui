@@ -1,5 +1,5 @@
 # hp-layui
-# hp-layui 厚溥与你同在   @隐无为
+# hp-layui 与你同在   @隐无为
 
 >更多 了解  我们的github组织和coding
 
