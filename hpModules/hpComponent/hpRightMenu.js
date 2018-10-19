@@ -56,7 +56,7 @@ layui.define(['layer', 'element'], function(exports) {
 			//默认 为 不可以关闭 
 			if(!isClose) {
 				// 获取 当前 弹窗
-				$(".hp-tab .layui-this").find('i').hide();
+				$(".hp-tab .layui-this").find('i.layui-tab-close').hide();
 			}
 
 		},
@@ -135,7 +135,7 @@ layui.define(['layer', 'element'], function(exports) {
 	var rightMenuhtml = '<div class="hp-right-tab-menu none">' +
 		'<table class="layui-tab dblclick-tab">' +
 		'<tr class="hp-tab-refresh">' +
-		'<td><i class="layui-icon">&#x1002;</i>刷新当前页面</td>' +
+		'<td><i class="layui-icon">&#xe666;</i>刷新当前页面</td>' +
 		'</tr>' +
 		'<tr class="hp-tab-close">' +
 		'<td><i class="layui-icon">&#x1006;</i>关闭当前页面</td>' +

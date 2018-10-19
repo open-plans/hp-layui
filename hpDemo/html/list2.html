@@ -21,8 +21,8 @@
 
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 <script>
-	layui.use(['table','form'], function() {
-		var table = layui.table;
+	layui.use(['hpTable','form'], function() {
+		var table = layui.hpTable;
 		var form=layui.form;
 		//方法级渲染
 		
@@ -31,10 +31,10 @@
 			index:110,
 			url: 'json/demo3.json',
 			singleSelect:true,// 扩展属性-单选
-			cols: [
+			cols: [ 
 				[
 					//{ templet: '#radioTpl', fixed: true,width: 80, align:'center'}, 
-					{ type:'radio',fixed: true,width: 80, align:'center'},
+					{ checkbox:true,fixed: true,width: 80, align:'center'},
 					{ field: 'id', title: 'ID', width: 80, sort: true, fixed: true },
 					{ field: 'username', title: '用户名', width: 80 }, 
 					{ field: 'sex', title: '性别', width: 80, sort: true }, 

@@ -18,6 +18,9 @@
 				</div>
 				<!-- 头部区域（可配合layui已有的水平导航） -->
 				<ul class="layui-nav layui-layout-left">
+					<li class="hp-side-menu">
+						<span><i class="layui-icon " >&#xe668;</i></span>
+					</li>
 					<li class="layui-nav-item">
 						<a href="">阿里云</a>
 					</li>
@@ -82,7 +85,7 @@
 						</li>
 					</ul>
 
-					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+					<ul class="layui-nav layui-nav-tree " lay-filter="test">
 						<li class="layui-nav-item layui-nav-itemed">
 							<a class="" href="javascript:;"><i class="layui-icon hp-icon-size">&#xe857;</i>基本功能</a>
 							<dl class="layui-nav-child">
@@ -148,6 +151,17 @@
 								<dd>
 									<a target="_blank" href="pageDemo/404.html">404页面</a>
 								</dd>
+								<dd>
+									<a href="javascript:;">二级菜单<span class="layui-nav-more"></span></a>
+									<dl class="layui-nav-child hp-child-menu">
+										<dd>
+											<a lay-href="component/form/element.html">子菜单一</a>
+										</dd>
+										<dd>
+											<a lay-href="component/form/group.html">子菜单二</a>
+										</dd>
+									</dl>
+								</dd>
 							</dl>
 						</li>
 						<li class="layui-nav-item">
@@ -183,6 +197,9 @@
 						<li class="layui-nav-item">
 							<a target="_blank" href="https://hpit-bat.github.io/hpit-BAT-home">黑科技</a>
 						</li>
+						<li class="layui-nav-item">
+							<a target="_blank" href="open-itsource/index.html">文档</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -191,7 +208,9 @@
 				<!-- 内容主体区域 -->
 				<div class="layui-tab hp-tab " style="" lay-filter="hp-tab-filter" lay-allowclose="true">
 					<ul class="layui-tab-title" style="">
-						<li class="layui-this" lay-id="0">首页</li>
+						<li class="layui-this" lay-id="0">
+							<i class="layui-icon hp-icon-size">&#xe68e;</i>首页
+						</li>
 					</ul>
 					<div class="layui-tab-content">
 						<div class="layui-tab-item layui-show">
@@ -235,14 +254,13 @@
 									源码地址：<br/><br/>
 									<a target="_blank" href="https://github.com/hpit-BAT/hp-layui"><button class="layui-btn layui-btn-danger  layui-btn-sm">github</button></a>
 								</blockquote>
-								
-								
+
 								<blockquote class="layui-elem-quote">
 									<h2>hp-layui 与你同在   @隐无为</h2> 如果你有什么疑问欢迎加入qq群讨论交流前端知识
 									<br/>
 									<b>qq群:693291343(此群不在加人(整顿中,等待通知))</b>
 									<br/>
-									<h2>最近工作比较忙,代码更新慢了，尴尬。。。。。。。</h2> 
+									<h2>最近工作比较忙,代码更新慢了，尴尬。。。。。。。</h2>
 								</blockquote>
 								<blockquote class="layui-elem-quote">
 									计划:<br/> 1.运用此模板的后台项目(正在码代码中。。。。)
@@ -263,20 +281,47 @@
 										<div class="layui-timeline-content layui-text">
 											<div class="layui-timeline-title" style="color: red;">
 												<div class="layui-timeline-title" style="color: red;">
-													v1.1.0-更新内容如下
+													v1.2.0-更新内容如下
 												</div>
 												<ul>
 													<li>
-													    1、 归总模块(具体查看hpModules)
+														1、 更新原layui 版本 2.2.5到2.4.3
 													</li>
 													<li>
-														2、 样式美化：菜单加上图标、选项卡加上主题色
+														2、 设置侧边栏并自适应
 													</li>
-													
+													<li>
+														3、 多级菜单(示例页面二级菜单)
+													</li>
+													<li>
+														4、 如果还要用以前的table样式 <br/>
+														  可以使用hpTable,已成为内置模块
+													</li>
+
 												</ul>
 											</div>
 										</div>
 									</li>
+									<li class="layui-timeline-item">
+										<i class="layui-icon layui-timeline-axis"></i>
+										<div class="layui-timeline-content layui-text">
+											<div class="layui-timeline-title" style="color: red;">
+												<div class="layui-timeline-title" style="color: red;">
+													v1.1.0-更新内容如下
+												</div>
+												<ul>
+													<li>
+														1、 归总模块(具体查看hpModules)
+													</li>
+													<li>
+														2、 样式美化：菜单加上图标、选项卡加上主题色
+													</li>
+
+												</ul>
+											</div>
+										</div>
+									</li>
+									
 									<li class="layui-timeline-item">
 										<i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
 										<div class="layui-timeline-content layui-text">
@@ -339,12 +384,14 @@
 										</div>
 									</li>
 									<li class="layui-timeline-item">
-									    <div class="layui-timeline-content layui-text">
-											<div class="layui-timeline-title" >
-											<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+										<div class="layui-timeline-content layui-text">
+											<div class="layui-timeline-title">
+												<p>Hosted by
+													<a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+												</p>
 											</div>
 										</div>
-									
+
 									</li>
 
 								</ul>
@@ -366,6 +413,7 @@
 			layui.config({
 				base: './hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名
+				hpIndex: 'admin/hpIndex',
 				hpTab: 'hpComponent/hpTab',
 				hpRightMenu: 'hpComponent/hpRightMenu',
 				hpFormAll: 'hpComponent/hpFormAll',
@@ -375,13 +423,14 @@
 			});
 
 			//JavaScript代码区域
-			layui.use(['element', 'carousel', 'hpTheme', 'hpTab', 'hpLayedit', 'hpRightMenu', 'test'], function() {
+			layui.use(['element', 'carousel', 'hpTheme', 'hpTab', 'hpLayedit', 'hpRightMenu', 'test', 'hpIndex'], function() {
 
 				var element = layui.element;
 				var carousel = layui.carousel; //轮播
 				var hpTab = layui.hpTab;
 				var hpRightMenu = layui.hpRightMenu;
 				var hpTheme = layui.hpTheme;
+				var hpIndex = layui.hpIndex;
 				$ = layui.jquery;
 				/*var test=layui.test;
 				console.log(test.version) */
@@ -401,6 +450,8 @@
 				hpTab.init();
 				// 右键tab菜单
 				hpRightMenu.init();
+				// 主页公共js
+				hpIndex.init();
 
 			});
 		</script>

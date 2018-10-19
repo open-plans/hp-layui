@@ -38,8 +38,9 @@
 							<div class="layui-input-inline">
 								<input id="name" type="text" name="name" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
 							</div>
-							<div class="layui-input-inline" style="margin-left: -8px;">
-							<button  id="listBtn" class="layui-btn layui-btn-normal">选择</button>
+							<div class="" style="margin-left: -8px;">
+							<button  id="listBtn" class="layui-btn layui-btn-normal">单选选择(radio方式)</button>
+							<button  id="listBtn2" class="layui-btn layui-btn-normal">单选选择(checkbox方式)</button>
 							</div>
 						</div>
 						<div class="layui-form-item">
@@ -88,14 +89,24 @@
 			layui.config({
 				base: '../hpModules/' // 扩展模块目录
 			}).extend({ // 模块别名 
+				hpWindowS: 'hpComponent/hpWindowS',
 				hpWindow: 'hpComponent/hpWindow',
 				hpConfig : 'hpComponent/hpConfig',
 			});
-			layui.use(['table', 'hpWindow'], function() {
+			layui.use(['table', 'hpWindow','hpWindowS'], function() {
 				var table = layui.table;
 				var hpWindow = layui.hpWindow;
+				var hpWindowS = layui.hpWindowS;
 				var $=layui.$;
 				hpWindow.openList("#listBtn",'html/list.html',{},function(data,index,layro){
+					//layer.alert(JSON.stringify(data))
+					var json=data[0];
+					$('#name').val(json.username);
+					$('#city').val(json.city);
+					$('#job').val(json.classify);
+					$('#money').val(json.wealth);
+				})
+				hpWindowS.openList("#listBtn2",'html/list2.html',{},function(data,index,layro){
 					//layer.alert(JSON.stringify(data))
 					var json=data[0];
 					$('#name').val(json.username);

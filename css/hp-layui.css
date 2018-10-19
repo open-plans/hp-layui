@@ -50,9 +50,31 @@
 
 
 /* 字体图标 大小*/
-.hp-icon-size{
+
+.hp-icon-size {
 	font-size: 20px;
 	margin-right: 5px;
+}
+
+
+/*侧边栏按钮*/
+
+.hp-side-menu {
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	line-height: 60px;
+	cursor: pointer;
+}
+
+.hp-side-menu .layui-icon {
+	font-size: 16px;
+}
+/*无限极菜单*/
+.layui-nav-itemed>.hp-child-menu{
+	padding: 0px 15px;
 }
 
 
@@ -128,10 +150,13 @@
 	color: #fff;
 }
 
+
 /*选项卡 颜色*/
-.hp-blue-theme .hp-tab>ul li.layui-this{
+
+.hp-blue-theme .hp-tab>ul li.layui-this {
 	border-top: 3px solid #1E9FFF;
 }
+
 
 /*主题*/
 
@@ -208,10 +233,13 @@
 	color: #fff;
 }
 
+
 /*选项卡 颜色*/
-.hp-green-theme .hp-tab>ul li.layui-this{
+
+.hp-green-theme .hp-tab>ul li.layui-this {
 	border-top: 3px solid #5FB878;
 }
+
 
 /*主题*/
 
@@ -225,12 +253,12 @@
 	background: #393D49;
 }
 
+
 /*选项卡 颜色*/
-.hp-black-theme  .hp-tab>ul li.layui-this{
-	border-top: 3px solid  #000;
+
+.hp-black-theme .hp-tab>ul li.layui-this {
+	border-top: 3px solid #000;
 }
-
-
 
 
 /*主题*/
@@ -306,4 +334,21 @@
 
 .hp-white-theme .hp-nav-none .layui-nav-item .hp-user-name {
 	color: #fff;
+}
+
+
+/*响应式*/
+@media screen and (max-width: 768px) {
+	.layui-layout-admin .hp-left-menu{
+		left: -200px
+	}
+	.layui-layout-admin .layui-body {
+		left: 0
+	}
+	.layui-layout-admin .layui-footer {
+		left: 0
+	}
+	.layui-layout-left {
+		display: none
+	}
 }
